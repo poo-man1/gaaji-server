@@ -109,4 +109,13 @@ io.on("connection", socket => {
 // 🚀 START SERVER (THIS IS THE LINE YOU ASKED ABOUT)
 server.listen(process.env.PORT || 3000, () => {
   console.log("✅ Gaaji signaling server running");
+
+  const io = new Server(server, {
+  cors: {
+    origin: "*",
+    methods: ["GET", "POST"]
+  }
 });
+
+});
+
